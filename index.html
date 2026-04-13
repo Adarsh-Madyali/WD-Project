@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Book Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Online Book Store</h1>
+    <input type="text" id="search" placeholder="Search books...">
+</header>
+
+<section class="books" id="bookList">
+    <div class="book">
+        <h3>Harry Potter</h3>
+        <p>₹500</p>
+        <button onclick="addToCart('Harry Potter')">Add to Cart</button>
+    </div>
+
+    <div class="book">
+        <h3>Rich Dad Poor Dad</h3>
+        <p>₹300</p>
+        <button onclick="addToCart('Rich Dad Poor Dad')">Add to Cart</button>
+    </div>
+
+    <div class="book">
+        <h3>Wings of Fire</h3>
+        <p>₹350</p>
+        <button onclick="addToCart('Wings of Fire')">Add to Cart</button>
+    </div>
+</section>
+
+<section class="cart">
+    <h2>Cart</h2>
+    <ul id="cartList"></ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
