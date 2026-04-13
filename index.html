@@ -2,39 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Online Book Store</title>
+    <title>Movie Recommendation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>Online Book Store</h1>
-    <input type="text" id="search" placeholder="Search books...">
+    <h1>Movie Recommendation</h1>
+    <select id="genreFilter">
+        <option value="all">All</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+    </select>
 </header>
 
-<section class="books" id="bookList">
-    <div class="book">
-        <h3>Harry Potter</h3>
-        <p>₹500</p>
-        <button onclick="addToCart('Harry Potter')">Add to Cart</button>
+<section class="movies" id="movieList">
+
+    <div class="movie" data-genre="action">
+        <h3>Avengers</h3>
+        <p>Genre: Action</p>
+        <p>Rating: <span class="rating">0</span></p>
+        <button onclick="rateMovie(this, 1)">⭐</button>
+        <button onclick="rateMovie(this, 2)">⭐⭐</button>
+        <button onclick="rateMovie(this, 3)">⭐⭐⭐</button>
     </div>
 
-    <div class="book">
-        <h3>Rich Dad Poor Dad</h3>
-        <p>₹300</p>
-        <button onclick="addToCart('Rich Dad Poor Dad')">Add to Cart</button>
+    <div class="movie" data-genre="comedy">
+        <h3>Mr. Bean</h3>
+        <p>Genre: Comedy</p>
+        <p>Rating: <span class="rating">0</span></p>
+        <button onclick="rateMovie(this, 1)">⭐</button>
+        <button onclick="rateMovie(this, 2)">⭐⭐</button>
+        <button onclick="rateMovie(this, 3)">⭐⭐⭐</button>
     </div>
 
-    <div class="book">
-        <h3>Wings of Fire</h3>
-        <p>₹350</p>
-        <button onclick="addToCart('Wings of Fire')">Add to Cart</button>
+    <div class="movie" data-genre="drama">
+        <h3>3 Idiots</h3>
+        <p>Genre: Drama</p>
+        <p>Rating: <span class="rating">0</span></p>
+        <button onclick="rateMovie(this, 1)">⭐</button>
+        <button onclick="rateMovie(this, 2)">⭐⭐</button>
+        <button onclick="rateMovie(this, 3)">⭐⭐⭐</button>
     </div>
-</section>
 
-<section class="cart">
-    <h2>Cart</h2>
-    <ul id="cartList"></ul>
 </section>
 
 <script src="script.js"></script>
