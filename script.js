@@ -1,38 +1,20 @@
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #f4f4f4;
+function rateMovie(button, value) {
+    let movie = button.parentElement;
+    let ratingSpan = movie.querySelector(".rating");
+    ratingSpan.textContent = value;
 }
 
-header {
-    background: #222;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
+// Filter by genre
+document.getElementById("genreFilter").addEventListener("change", function() {
+    let selected = this.value;
+    let movies = document.querySelectorAll(".movie");
 
-select {
-    padding: 8px;
-    margin-top: 10px;
-}
-
-.movies {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px;
-}
-
-.movie {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    width: 180px;
-}
-
-button {
-    margin: 5px;
-    padding: 5px;
-    cursor: pointer;
-}
+    movies.forEach(movie => {
+        let genre = movie.getAttribute("data-genre");
+        if (selected === "all" || genre === selected) {
+            movie.style.display = "block";
+        } else {
+            movie.style.display = "none";
+        }
+    });
+});
