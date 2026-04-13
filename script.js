@@ -1,28 +1,38 @@
-let cart = [];
-
-function addToCart(book) {
-    cart.push(book);
-    displayCart();
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
 }
 
-function displayCart() {
-    let cartList = document.getElementById("cartList");
-    cartList.innerHTML = "";
-
-    cart.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = item;
-        cartList.appendChild(li);
-    });
+header {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
 }
 
-// Search Function
-document.getElementById("search").addEventListener("keyup", function() {
-    let filter = this.value.toLowerCase();
-    let books = document.querySelectorAll(".book");
+select {
+    padding: 8px;
+    margin-top: 10px;
+}
 
-    books.forEach(book => {
-        let title = book.querySelector("h3").textContent.toLowerCase();
-        book.style.display = title.includes(filter) ? "block" : "none";
-    });
-});
+.movies {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.movie {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 180px;
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
